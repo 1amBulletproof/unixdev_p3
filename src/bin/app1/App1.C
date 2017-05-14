@@ -12,3 +12,11 @@
  */
 
 //TODO make this app
+#include <unistd.h>
+#include <stdlib.h>
+#include "log_mgr.h"
+
+main()
+{
+	exit (0);
+}
