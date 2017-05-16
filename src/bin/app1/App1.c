@@ -1,5 +1,5 @@
 /*
- * This program shall use the above library to create up to twelve threads, and then wait for all the threads to complete before exiting. The program shall require one argument which shall be an integer indicating how many threads to create (which must be between 1 and 12, inclusive).
+ * This program shall use the thread_mgr library to create up to twelve threads, and then wait for all the threads to complete before exiting. The program shall require one argument which shall be an integer indicating how many threads to create (which must be between 1 and 12, inclusive).
  *
  * The program shall start all of these threads concurrently. Each thread shall execute a funciton that shall perform some extensive mathematical computations of your choice. One sample program incremented an integer variable five billion times; but this number depends on the machine running the program. Anythread should takea bout roughly 5-20 seconds to execute (make sure the thred is busy; don't allow the thread to block).
  *
@@ -14,9 +14,12 @@
 //TODO make this app
 #include <unistd.h>
 #include <stdlib.h>
-#include "log_mgr.h"
+#include <stdio.h>
+#include "thread_mgr.h"
+
 
 main()
 {
-	exit (0);
+        printf("Hello World");
+        exit (0);
 }

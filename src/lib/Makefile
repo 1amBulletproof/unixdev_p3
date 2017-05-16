@@ -1,4 +1,4 @@
-SUBS = log
+SUBS = threading
 
 it install bare clean depend:
 	-BASEPWD=`pwd`; \

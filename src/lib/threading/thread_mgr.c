@@ -12,23 +12,27 @@
 #include <string.h>
 #include <time.h>
 
-#include "log_mgr.h"
+#include "thread_mgr.h"
 
 
 /*
  * executes the argument function as an independent thread within the process. Create a name for the thread and maintain it within the library. Also create a unique integer handle (TheadHandles) and return it upon successful execution. If the function fails it shall return THD_ERROR (-1)
  *
  */
-ThreadHandles th_execute(Funcptrs)
+ThreadHandles th_execute(Funcptrs fcn)
 {
+        printf("th_execute");
+        return 0;
 }
 
 /*
  * blocks the calling thread until the thread associated with the argument handle terminates. 
  * Returns THD_ERROR if the argument is not a valid thread. Otherwise the thread returns THD_OK(0). After the thread terminates, the thread library should purge the stored thread information for the argument thread
  */
-int th_wait(ThreadHandles)
+int th_wait(ThreadHandles threadHandles)
 {
+        printf("th_wait");
+        return 0;
 }
 
 /*
@@ -36,13 +40,17 @@ int th_wait(ThreadHandles)
  * */
 int th_wait_all(void)
 {
+        printf("th_wait_all");
+        return 0;
 }
 
 /*
  * cancels the executing thread associated with the argument thread handle, and updates the status of the thread appropriately. This function returns THD_ERROR if the argument is not a valid thread handle. Note that this call is not required to asynchronouslykill the thread; the thread may be cancelled until the thread reaches its cancellation point, and cleaned up after the application waits for the thread
- * */`
-int th_kill(ThreadHandles)
+ * */
+int th_kill(ThreadHandles threadHandles)
 {
+        printf("th_kill");
+        return 0;
 }
 
 /*
@@ -50,6 +58,8 @@ int th_kill(ThreadHandles)
  */
 int th_kill_all(void)
 {
+        printf("th_kill_all");
+        return 0;
 }
 
 /*
@@ -57,6 +67,8 @@ int th_kill_all(void)
  */
 int th_exit(void)
 {
+        printf("th_exit");
+        return 0;
 }
 
 /* Signal Handler 
