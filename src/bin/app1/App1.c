@@ -18,8 +18,40 @@
 #include "thread_mgr.h"
 
 
+void *thread_action(void *arg)
+{
+        printf("thread running\n");
+        int i = 0;
+        while (i < 10000)
+        {
+                i++;
+        }
+        printf("thread ending\n");
+        return NULL;
+}
+
 main()
 {
-        printf("Hello World");
+        printf("Program start\n");
+        //todo input specifiying number of threads
+        //todo create 2-12 threads
+        //todo threads all execute a mathematic computation like incrementing 1 billion times
+        th_execute(&thread_action);
+        th_execute(&thread_action);
+        //todo wait for the threads to complete before exiting (join)
+        //
+        //
+        sleep(5);
+        printf("Program end\n");
         exit (0);
 }
+
+
+
+
+
+
+
+
+
+

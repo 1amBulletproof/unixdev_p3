@@ -11,9 +11,11 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
+#include <pthread.h>
 
 #include "thread_mgr.h"
 
+#define THD_ERROR -1
 
 /*
  * executes the argument function as an independent thread within the process. Create a name for the thread and maintain it within the library. Also create a unique integer handle (TheadHandles) and return it upon successful execution. If the function fails it shall return THD_ERROR (-1)
@@ -21,7 +23,13 @@
  */
 ThreadHandles th_execute(Funcptrs fcn)
 {
-        printf("th_execute");
+        printf("th_execute\n");
+        pthread_t thread;
+        if (pthread_create(thread, NULL , fcn, NULL) != 0)
+        {
+                printf("error creating a thread");
+                return THD_ERROR;
+        }
         return 0;
 }
 
@@ -31,7 +39,10 @@ ThreadHandles th_execute(Funcptrs fcn)
  */
 int th_wait(ThreadHandles threadHandles)
 {
-        printf("th_wait");
+        //get thread from thread handles
+        //pthread_join(thread, value);
+        //pthread_mutex_lock(pthread_mutex_t *mutex)
+        printf("th_wait\n");
         return 0;
 }
 
@@ -40,7 +51,8 @@ int th_wait(ThreadHandles threadHandles)
  * */
 int th_wait_all(void)
 {
-        printf("th_wait_all");
+        //pthread_join(thread, value) FOR ALL THREADS
+        printf("th_wait_all\n");
         return 0;
 }
 
@@ -49,7 +61,7 @@ int th_wait_all(void)
  * */
 int th_kill(ThreadHandles threadHandles)
 {
-        printf("th_kill");
+        printf("th_kill\n");
         return 0;
 }
 
@@ -58,7 +70,7 @@ int th_kill(ThreadHandles threadHandles)
  */
 int th_kill_all(void)
 {
-        printf("th_kill_all");
+        printf("th_kill_all\n");
         return 0;
 }
 
@@ -67,7 +79,7 @@ int th_kill_all(void)
  */
 int th_exit(void)
 {
-        printf("th_exit");
+        printf("th_exit\n");
         return 0;
 }
 

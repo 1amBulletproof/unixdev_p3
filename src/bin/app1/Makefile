@@ -15,7 +15,7 @@ SRC	= App1.c
 LIBS	= $(LIBDIR)/libthread_mgr.a
 
 # How they are invoked on the compile line (eg: -lspecial)
-LLIBS	= -lthread_mgr
+LLIBS	= -lthread_mgr -pthread
 
 # Local additions for CFLAG options
 LOCAL_CFLAGS	= -g
